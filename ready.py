@@ -271,7 +271,7 @@ async def cmd_chk(update: Update, context: ContextTypes.DEFAULT_TYPE):
     bin_data = await bin_lookup(card_number[:6])
     card_type, gateway, status, response = simulate_card_auth(card_number)
     card_info = f"{card_number}|{exp_month}|{exp_year}|{cvv}"
-    output = "?? ???? ??????????????:\n" + format_output(card_info, card_type, gateway, status, response, bin_data, checked_by)
+    output = "🧾 𝗖𝗖 𝗖𝗛𝗘𝗖𝗞𝗘𝗥:\n" + format_output(card_info, card_type, gateway, status, response, bin_data, checked_by)
     
     await send_timed_reply(update, output)
     change_credits(user_id, -1)
